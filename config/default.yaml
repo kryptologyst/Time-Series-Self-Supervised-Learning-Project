@@ -1,0 +1,32 @@
+model:
+  model_type: transformer
+  input_dim: 1
+  d_model: 128
+  nhead: 8
+  num_layers: 6
+  dim_feedforward: 512
+  dropout: 0.1
+  max_len: 1000
+
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  num_epochs: 100
+  mask_prob: 0.2
+  seq_len: 50
+  device: auto
+  save_every: 10
+  eval_every: 5
+
+data:
+  length: 1000
+  frequency: D
+  start_date: '2020-01-01'
+  noise_level: 0.1
+  trend_strength: 0.5
+  seasonality_strength: 1.0
+  anomaly_probability: 0.05
+
+experiment_name: ssl_experiment
+output_dir: ./outputs
+log_level: INFO
